@@ -1,52 +1,32 @@
 #include<stdio.h>
-int fun(int no)
-{
-    int i,fc=0;
-    for(i=1;i<=no;i++)
-    {
-        if(no%i==0)
-        {
-            fc++;
-        }
-    }
-    if(fc==2)
-    {
-    return 1;
-    }
-    else
-    {
-    return 0;
-    }
-}
 int main()
 {
-    int n,d,c=0,cc=0,temp;
+    int temp=0,sum=0,count=0,i,n,r;
     scanf("%d",&n);
-    temp=n;
-    if(fun(n))
+    for(i=2;i<n;i++)
     {
-        while(n)
+        if(n%i==0)
+        count++;
+    }
+    if(count==0)
+    {
+        while(n>0)
         {
-            d=n%10;
-            if(fun(d))
+            sum=0;
+            r=n%10;
+            for(i=2;i<r;i++)
             {
-                cc++;
+                if(r%i==0)
+                sum++;
             }
+            if (r==1)
+            temp++;
             n=n/10;
-            c++;
-        }
-        if(c==cc)
-        {
-            printf("Mega Prime");
-        }
-        else
-        {
-            printf("Not Mega Prime");
         }
     }
-else
-{
+    if(count ==0&& sum==0&&temp!=1)
+    printf("Mega Prime");
+    else
     printf("Not Mega Prime");
-}
     return 0;
 }
