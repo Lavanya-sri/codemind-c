@@ -1,17 +1,16 @@
 #include<stdio.h>
 int main()
 {
-    int x,y,LCM;
-    scanf("%d%d",&x,&y);
-     LCM=(x>y)?x:y;
-    while(1)
+    int gcd,a,b,lcm,i;
+    scanf("%d %d",&a,&b);
+    for(i=1;i<=a&&i<=b;i++)
     {
-        if(LCM%x==0&&LCM%y==0)
+        if(a%i==0&&b%i==0)
         {
-            printf("%d",LCM);
-            break;
+            gcd=i;
         }
-        ++LCM;
     }
+    lcm=(a*b)/gcd;
+    printf("%d",lcm);
     return 0;
 }
