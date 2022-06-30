@@ -1,25 +1,22 @@
 #include<stdio.h>
 int main()
 {
-    int n,arr[40],i,key;
+    int n,i,elem,count=0;
     scanf("%d",&n);
+    int arr[n];
     for(i=0;i<n;i++)
     {
         scanf("%d",&arr[i]);
     }
-    scanf("%d",&key);
-    int flag=0;
+    scanf("%d",&elem);
     for(i=0;i<n;i++)
     {
-    if(arr[i]==key)
-    {
-        flag=1;
+        if(arr[i]==elem)
+        count++;
+
     }
-    }
-    if(flag==1)
-    {
-        printf("True");
-    }
+    if(count>0)
+    printf("True");
     else
     printf("False");
     return 0;
