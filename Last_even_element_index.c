@@ -1,22 +1,20 @@
 #include<stdio.h>
 int main()
 {
-    int n,arr[40],i;
+    int n,i,odd;
     scanf("%d",&n);
+    int arr[n];
     for(i=0;i<n;i++)
     {
         scanf("%d",&arr[i]);
     }
-    int flag=0;
     for(i=0;i<n;i++)
     {
         if(arr[i]%2==0)
         {
-          flag=i;
-           //break;
+            odd=i;
         }
     }
-
-    printf("%d",flag);
+    printf("%d",odd);
     return 0;
 }
