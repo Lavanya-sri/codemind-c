@@ -1,0 +1,42 @@
+#include<stdio.h>
+int main()
+{
+    int n,arr[100],i,j,c=0,y=0,sum=0,s=0;
+    float avg;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        c=1;
+        if(arr[i]==0)
+        {
+            continue;
+        }
+        for(j=i+1;j<n;j++)
+        {
+            if(arr[i]==arr[j])
+            {
+                c++;
+                arr[j]=0;
+            }
+        }
+        if(c==arr[i])
+        {
+            y=1;
+            sum=sum+arr[i];
+            s++;
+        }
+    }
+    if(y==0)
+    {
+        printf("-1");
+    }
+    else
+    {
+        avg=(float)sum/s;
+        printf("%0.2f",avg);
+    }
+}
