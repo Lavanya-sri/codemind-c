@@ -1,31 +1,26 @@
 #include<stdio.h>
 int main()
 {
-    int n,arr[40],i;
+    int n,i,elem,sum=0,count=0,avrg;
     scanf("%d",&n);
+    int arr[n];
     for(i=0;i<n;i++)
     {
         scanf("%d",&arr[i]);
     }
-    int sum=0,c;
+    scanf("%d",&elem);
     for(i=0;i<n;i++)
     {
         sum=sum+arr[i];
-        c=sum/n;
     }
-    int flag=0;
+    avrg=sum/n;
     for(i=0;i<n;i++)
     {
-        if(arr[i]==c)
-        {
-            flag=1;
-            break;
-        }
+        if(arr[i]==avrg)
+        count++;
     }
-    if(flag==1)
-    {
-        printf("True");
-    }
+    if(count>0)
+    printf("True");
     else
     printf("False");
     return 0;
