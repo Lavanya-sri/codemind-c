@@ -1,30 +1,29 @@
 #include<stdio.h>
 int main()
 {
-    int n,m,i,j,even=0,odd=0;
-    scanf("%d %d",&n,&m);
-    int arr[n][m];
-    for(i=0;i<n;i++)
+    int i,j,a[50][50],r,c,evenr=0,oddr=0;
+    scanf("%d%d",&r,&c);
+    for(i=0;i<r;i++)
     {
-        for(j=0;j<m;j++)
+        for(j=0;j<c;j++)
         {
-            scanf("%d",&arr[i][j]);
+            scanf("%d",&a[i][j]);
         }
     }
-    for(i=0;i<n;i++)
+    for(i=0;i<r;i++)
     {
-        for(j=0;j<m;j++)
+        for(j=0;j<c;j++)
         {
-            if(arr[i][j]%2==0)
+            if(a[i][j]%2==0)
             {
-                even=even+arr[i][j];
+                evenr+=a[i][j];
             }
             else
             {
-                odd=odd+arr[i][j];
+                oddr+=a[i][j];
             }
         }
     }
-    printf("%d %d",even,odd);
+    printf("%d %d",evenr,oddr);
     return 0;
 }
