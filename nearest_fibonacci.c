@@ -1,37 +1,58 @@
 #include<stdio.h>
-int main()
+int fib(int);
+int fib(int i)
 {
-    int n,a=0,b=1,c,j=0,i,arr[100];
-    scanf("%d",&n);
-    for(i=1;i<=n;i++)
+    int n1=0,n2=1,n3;
+    n3=n1+n2;
+    while(n3<i)
     {
-        arr[j]=a;
-        c=a+b;
-        a=b;
-        b=c;
-        j++;
+        n3=n1+n2;
+        n1=n2;
+        n2=n3;
     }
-    for(i=0;i<n;i++)
+    if(n3==i)
     {
-        if(arr[i]>n)
-        {
-            break;
-        }
-    }
-    if(n-arr[i-1]==arr[i]-n)
-    {
-        printf("%d %d",arr[i-1],arr[i]);
-    }
-    else if(n-arr[i-1]>arr[i]-n)
-    {
-        printf("%d",arr[i]);
+        return 1;
     }
     else
     {
-        printf("%d",arr[i-1]);
+        return 0;
     }
-    return 0;
-    
-    
-    
+}
+int main()
+{
+    int n,i,left=0,right=0,c,d;
+    scanf("%d",&n);
+    int temp=n;
+    for(i=n-1;i>2;i--)
+    {
+        if(fib(i))
+        {
+            //printf("%d",i);
+            left=i;
+            break;
+        }
+    }
+    for(i=n+1;i<=10000;i++)
+    {
+        if(fib(i))
+        {
+            right=i;
+            break;
+        }
+    }
+    c=temp-left;
+    d=right-temp;
+    if(c<d)
+    {
+        printf("%d",left);
+    }
+    else if(d<c)
+    {
+        printf("%d",right);
+    }
+    else
+    {
+        printf("%d %d",left,right);
+    }
 }
