@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int n,x,d,temp,sum=0,summ,dif=0,r,last,y,c=0,p=1,a=0;
+    scanf("%d%d",&n,&x);
+    temp=n;
+    y=x;
+    while(x>0)
+    {
+        p=p*10;
+        x--;
+    }
+    last=temp%p;
+    while(n>0)
+    {
+        r=n%10;
+        sum=sum*10+r;
+        n=n/10;
+    }
+    while(sum>0)
+    {
+        d=sum%10;
+        a=a*10+d;
+        c++;
+        if(c==y)
+        {
+            break;
+        }
+        sum=sum/10;
+    }
+    dif=abs(a-last);
+    printf("%d",dif);
+}
